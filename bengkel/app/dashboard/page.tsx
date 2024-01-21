@@ -13,12 +13,12 @@ import { RevenueChartSkeleton,
 export default async function Page() {
   const cookieStore = cookies()
   const supabase = createClient(cookieStore);
-  const { data: notes } = await supabase.from("notes").select()
+  const { data: part } = await supabase.from("part").select()
   
   return (
     
     <main>
-      <pre>{JSON.stringify(notes, null, 2)}</pre>
+      <pre>{JSON.stringify(part, null, 2)}</pre>
       <h1 className= "mb-4 text-xl md:text-2xl">
         Dashboard
       </h1>
